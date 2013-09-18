@@ -1,0 +1,24 @@
+#Python 2.7.5
+#Check Triangular
+import math
+def checkTrian(a, b, c):
+	if type(a) is float and type(b) is float and type(c) is float:
+		if (a>0 and b>0 and c > 0)and(a<2**32, b<2**32, c<2**32):
+			if (a+b>c) and (a+c>b) and (b+c>a):
+				if (a==b==c):
+					print "Tam giac deu"
+				elif (a==b!=c) or (a==c!=b) or (b==c!=a):
+					print "Tam giac can"
+				elif (a*a+b*b==c*c or a*a+c*c==b*b or b*b+c*c==a*a):
+					print "Tam giac vuong"
+				elif (a*a+b*b==c*c or a*a+c*c==b*b or b*b+c*c==a*a)\
+				and (a==b!=c) or (a==c!=b) or (b==c!=a):
+					print "Tam giac vuong can"
+				else:
+					print "Tam giac thuong"
+			else:
+				print "khong phai la tam giac"
+		else:
+			print "khong phai mien gia tri"
+	else:
+		print "khong phai kieu du lieu"
