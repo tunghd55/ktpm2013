@@ -1,24 +1,30 @@
-#Python 2.7.5
-#Check Triangular
+#Name : Hoàng Đức Tùng
+#Class: K55CC
+#ID   : 10020413
+
+#Program's name: Triangle Test
+
 import math
-def checkTrian(a, b, c):
-	if type(a) is float and type(b) is float and type(c) is float:
-		if (a>0 and b>0 and c > 0)and(a<2**32, b<2**32, c<2**32):
-			if (a+b>c) and (a+c>b) and (b+c>a):
-				if (a==b==c):
-					print "Tam giac deu"
-				elif (a==b!=c) or (a==c!=b) or (b==c!=a):
-					print "Tam giac can"
-				elif (a*a+b*b==c*c or a*a+c*c==b*b or b*b+c*c==a*a):
-					print "Tam giac vuong"
-				elif (a*a+b*b==c*c or a*a+c*c==b*b or b*b+c*c==a*a)\
-				and (a==b!=c) or (a==c!=b) or (b==c!=a):
-					print "Tam giac vuong can"
-				else:
-					print "Tam giac thuong"
-			else:
-				print "khong phai la tam giac"
-		else:
-			print "khong phai mien gia tri"
-	else:
-		print "khong phai kieu du lieu"
+def triangleTest(a, b, c):
+    e = 10**-9
+
+    if (type(a) is float and type(b) is float and type(c) is float):
+        if (a>0 and b>0 and c>0) and ( a<2**32 and b<2**32 and c<2**32):
+            if (a+b>c) and (b+c>a) and (a+c>b):
+                if (a==b or a==c or b==c):
+                    if (a==b==c):
+                        print ("Equilateral triangle!") # Tam giác đều
+                    elif (a*a+b*b-c*c<=e or a*a+c*c-b*b<=e or b*b+c*c-a*a<=e):
+                        print ("Square isosceles triangle!") # Tam giác vuông cân
+                    else:
+                        print ("Isosceles triangle!") # Tam giác cân
+                elif (a*a+b*b==c*c or a*a+c*c==b*b or b*b+c*c==a*a) and (a!=b!=c):
+                    print ("Square triangle!") #Tam giác vuông
+                else:
+                    print("Normal Triangle!") # Tam giác thường
+            else:
+                print("Not is Triangle!") # Không phải là tam giác
+        else:
+            print ("Out of domain values!") # Không phải miền giá trị
+    else:
+        print ("Type float please!")
