@@ -8,12 +8,12 @@ array =[]
 doc = input.main.__doc__
 
     
-#------------So bien--------------------------------------- 
+#So bien cua main
 num = doc.count(':') # Dem so bien bang so ki tu ':'
-print "Number of var : \n %i " %num
+print "So bien :  %i " %num
 
 
-#----------Doc gia tri cua bien----------------------------
+#Doc gia tri bien
 i = 0
 j = -1   
 while(i<len(doc)):
@@ -41,11 +41,11 @@ while(i<len(doc)):
         array.append([])
         
     i+=1
-print "\nArray of value : "
+print "\nMang gia tri : "
 print array
 
 
-#-------------Exception----------
+#Ngoai le:
 
 
 for i in range (0, len(array) ):
@@ -55,9 +55,9 @@ for i in range (0, len(array) ):
             if len(array[i]) > 4 and ( array[i][4]-array[i][1])*(array[i][5]-array[i][0]) < 0 :
                 raise Exception("wrong input")
                       
-#-------------Test--------------
+#Test
             
-print "\nArray of test case : "
+print "\nMang Test case : "
 print arr          
 
 class TestSequense(unittest.TestCase):
@@ -69,10 +69,10 @@ def test_generator(a, b):
     return test
 
 if __name__ == '__main__':
-    print "\nTest CASE : "
+    print "\nCac test case : "
     for element in itertools.product(*arr):
         print element
         test_name = 'test_%s' %str(element)
-        test = test_generator(input.main(*element) , "abcdxyz")
+        test = test_generator(input.main(*element) , "gia tri tra ve")
         setattr(TestSequense, test_name, test)
     unittest.main()
